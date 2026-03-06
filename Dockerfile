@@ -1,5 +1,9 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-COPY . /var/www/html/
+WORKDIR /app
 
-EXPOSE 80
+COPY . .
+
+EXPOSE 8080
+
+CMD ["php", "-S", "0.0.0.0:8080"]
